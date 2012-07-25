@@ -12,7 +12,7 @@ No installation is needed.
 
 ## Usage
 
-    var FunctionQueue = require("./../src/function-queue.js")();
+    var FunctionQueue = require("function-queue")();
     FunctionQueue.push(function (callback) {
 	    console.log("dede");
 	    setTimeout(function () {
@@ -35,7 +35,7 @@ More samples at `samples/` directory.
 
 Sample:
 
-    var FunctionQueue = require("./../src/function-queue.js")();
+    var FunctionQueue = require("function-queue")();
 ---
 #### Add Function into queue
 
