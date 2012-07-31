@@ -2,6 +2,8 @@
 
 Simple queue to execute any function on FIFO order.
 
+[![Build Status](https://secure.travis-ci.org/TotenDev/Function-Queue.png?branch=master)](http://travis-ci.org/TotenDev/Function-Queue)
+
 ## Requirements
 
 - [npm](https://github.com/isaacs/npm)
