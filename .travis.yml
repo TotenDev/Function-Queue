@@ -9,4 +9,4 @@ notifications:
     channels:
       - "irc.freenode.org#TotenDev"
 before_install:
-  node install --test
+  npm install --test
