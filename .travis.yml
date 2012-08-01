@@ -8,5 +8,3 @@ notifications:
   irc:
     channels:
       - "irc.freenode.org#TotenDev"
-before_install:
-  npm install --test
