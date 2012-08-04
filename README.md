@@ -6,6 +6,7 @@ Simple queue to execute any function on FIFO order.
 
 ## Requirements
 
+- [node](https://github.com/joyent/node)
 - [npm](https://github.com/isaacs/npm)
 
 ## Installation

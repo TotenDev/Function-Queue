@@ -10,8 +10,7 @@
 **/
 module.exports = function () { return new FunctionQueue(); }
 function FunctionQueue() {
-	FunctionQueueObject = this;
-	FunctionQueueObject.container = new Array();
+	this.container = new Array();
 };
 
 /**
@@ -25,21 +24,22 @@ FunctionQueue.prototype.push = function push(leFunction) {
 		return false; 
 	}
 	
-	FunctionQueueObject.container.push(leFunction);
-	if (FunctionQueueObject.container.length == 1) { FunctionQueueObject.nextInQueue(); }
+	this.container.push(leFunction);
+	if (this.container.length == 1) { this.nextInQueue(); }
 };
 
 /**
 * Execute and call next in queue if have it
 **/
 FunctionQueue.prototype.nextInQueue = function nextInQueue() {
-	if (FunctionQueueObject.container.length>0) {
+	var thisRef = this;
+	if (this.container.length>0) {
 		var callback = function () {
-			FunctionQueueObject.container.splice(0,1);
-			FunctionQueueObject.nextInQueue();
+			thisRef.container.splice(0,1);
+			thisRef.nextInQueue();
 		}
 		//execute function with callback, to execute next one
-		FunctionQueueObject.container[0](callback);
+		thisRef.container[0](callback);
 	}
 }
 
@@ -48,5 +48,5 @@ FunctionQueue.prototype.nextInQueue = function nextInQueue() {
 * Remove all object
 **/
 FunctionQueue.prototype.removeAllObjects = function removeAllObjects() {
-	FunctionQueueObject.container.splice(0,FunctionQueueObject.container.length);
+	this.container.splice(0,this.container.length);
 }
