@@ -16,7 +16,7 @@ function FunctionQueue() {
 /**
 * Push function to queue
 **/
-FunctionQueue.prototype.push = function push(leFunction) {
+FunctionQueue.prototype.push = function push(leFunction,optionalArg) {
 	//Checks
 	if (!leFunction) { 
 		var errorStr="leFunction *REQUIRED* parameter is missing;"; 
@@ -24,7 +24,7 @@ FunctionQueue.prototype.push = function push(leFunction) {
 		return false; 
 	}
 	
-	this.container.push(leFunction);
+	this.container.push({callFunction:leFunction,arg:optionalArg});
 	if (this.container.length == 1) { this.nextInQueue(); }
 };
 
@@ -39,7 +39,8 @@ FunctionQueue.prototype.nextInQueue = function nextInQueue() {
 			thisRef.nextInQueue();
 		}
 		//execute function with callback, to execute next one
-		thisRef.container[0](callback);
+        var obj = thisRef.container[0];
+		obj.callFunction(callback,obj.arg);
 	}
 }
 

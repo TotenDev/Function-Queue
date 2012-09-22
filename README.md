@@ -44,14 +44,15 @@ Sample:
 
 Parameters:
 - function - **Type:**function - **Description:**Function to be added on queue. - **REQUIRED**
+- arg - **Type:**any - **Description:**Argument to be called within function. - **OPTIONAL**
 
 Sample:
 
-    FunctionQueue.push(function (callback) {
-	    console.log("dedeOut");
+    FunctionQueue.push(function (callback,arg) {
+	    console.log("hello " + arg); //Should print 'hello mate'
 	    //you must call callback to continue queue
 	    callback();
-    })
+    },"mate!")
 ---
 #### Remove all Object from queue !
 Functions already started will not be canceled.

@@ -19,6 +19,19 @@ tap.test("Basic push",function (t) {
 	t.end();
 });
 //
+tap.test("Basic push options",function (t) {
+  var FunctionQueue = require("./../src/function-queue.js")();
+  t.plan(3);
+  t.doesNotThrow(function () {
+    FunctionQueue.push(function (callback,arg) {
+      t.ok(true,"first push call"); 
+      t.equal(arg,"Hello buddy!","argument is okay")
+      callback();
+    },"Hello buddy!");
+  });
+  t.end();
+});
+//
 tap.test("Push 2 times",function (t) {
 	var FunctionQueue = require("./../src/function-queue.js")();
 	t.plan(4);
@@ -35,6 +48,26 @@ tap.test("Push 2 times",function (t) {
 		});
 	});
 	t.end();
+});
+//
+tap.test("Push 2 times options",function (t) {
+  var FunctionQueue = require("./../src/function-queue.js")();
+  t.plan(6);
+  t.doesNotThrow(function () {
+    FunctionQueue.push(function (callback,arg) {
+      t.ok(true,"first push call"); 
+      t.equal(arg,"Hello buddy!","argument is okay")
+      callback();
+    },"Hello buddy!");
+  });
+  t.doesNotThrow(function () {
+    FunctionQueue.push(function (callback,arg) {
+      t.ok(true,"second push call"); 
+      t.equal(arg,"Hey buddy.","argument is okay")
+      callback();
+    },"Hey buddy.");
+  });
+  t.end();
 });
 //
 tap.test("Push 2 times timeout",function (t) {
