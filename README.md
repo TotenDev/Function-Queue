@@ -3,7 +3,6 @@
 Simple queue to execute any function on FIFO order.
 
 [![Build Status](https://secure.travis-ci.org/TotenDev/Function-Queue.png?branch=master)](http://travis-ci.org/TotenDev/Function-Queue)
-[![Code Climate](https://codeclimate.com/github/TotenDev/Function-Queue.png)](https://codeclimate.com/github/TotenDev/Function-Queue)
 
 ## Requirements
 
