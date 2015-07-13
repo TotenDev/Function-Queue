@@ -4,7 +4,8 @@ Simple queue to execute any function on FIFO order.
 
 [![NPM](https://nodei.co/npm/function-queue.png?compact=true)](https://nodei.co/npm/function-queue/)
 
-[![Build Status](https://secure.travis-ci.org/TotenDev/Function-Queue.png?branch=master)](http://travis-ci.org/TotenDev/Function-Queue)
+[![Build Status](https://secure.travis-ci.org/TotenDev/Function-Queue.png?branch=master)](http://travis-ci.org/TotenDev/Function-Queue) [![Dependency Status](https://gemnasium.com/TotenDev/Function-Queue.svg)](https://gemnasium.com/TotenDev/Function-Queue)
+
 
 ## Requirements
 
